@@ -148,12 +148,12 @@ def getVInfoList(url):
 
 
 
+if __name__ == '__main__':
 
+	chUrl = input('Enter channel URL or title: ')
 
-chUrl = input('Enter channel URL or title: ')
+	vids = getVInfoList(chUrl)
 
-vids = getVInfoList(chUrl) #url like this, not like .../channel/BlackSilverUfa
-
-df = pd.DataFrame(vids)
-df.columns = ['playlist','title', 'date', 'views', 'likes', 'dislikes', 'favs', 'comments', 'duration']
-df.to_csv('out.csv')
+	df = pd.DataFrame(vids)
+	df.columns = ['playlist','title', 'date', 'views', 'likes', 'dislikes', 'favs', 'comments', 'duration']
+	df.to_csv('out.csv')
